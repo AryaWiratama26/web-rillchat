@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RillChat - Chat Mahasiswa dengan AI</title>
+
+  <!-- Unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>RillChat</h2>
+      <button class="close-btn" id="close-btn"><i class="uil uil-times"></i></button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#fitur">Fitur</a></li>
+      <li><a href="#tampilan">Tampilan</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="https://github.com/AryaWiratama26/rillchat" target="_blank">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-flex">
+      <!-- Hamburger menu kiri -->
+      <button class="menu-btn" id="menu-btn"><i class="uil uil-bars"></i></button>
+      <div class="header-content">
+        <h1>RillChat</h1>
+        <p class="lead">Aplikasi Chat Mahasiswa dengan Asisten AI<br/>Universitas Pelita Bangsa</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fitur Section -->
+  <section class="container" id="fitur">
+    <h2>Fitur Unggulan</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3><i class="uil uil-comments"></i> Chatting Real-time</h3>
+        <p>Koneksi cepat antar mahasiswa di dalam lingkungan kampus.</p>
+      </div>
+      <div class="feature-card">
+        <h3><i class="uil uil-robot"></i> Asisten AI LLaMA</h3>
+        <p>Bertanya seputar kampus jadi mudah dengan dukungan AI canggih.</p>
+      </div>
+      <div class="feature-card">
+        <h3><i class="uil uil-lock"></i> Login Aman</h3>
+        <p>Autentikasi aman dan terpercaya dengan Firebase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tampilan Section -->
+  <section class="container" id="tampilan">
+    <h2>Tampilan Aplikasi</h2>
+    <div class="gallery-slider">
+      <img src="/assets/img/CreateAccount-Andro.jpg" alt="Create Account">
+      <img src="/assets/img/SignIn-Andro.jpg" alt="Sign In">
+      <img src="/assets/img/MainScreen-Andro.jpg" alt="Main Screen">
+      <img src="/assets/img/ChatWithOther-Andro.jpg" alt="Chat Screen">
+      <img src="/assets/img/AssitenAI-Andro.jpg" alt="AI Assistant">
+    </div>
+  </section>
+
+  <!-- Tentang Section -->
+  <section class="container" id="tentang">
+    <h2>Tentang RillChat</h2>
+    <p>RillChat adalah aplikasi mobile chatting yang dirancang khusus untuk civitas akademika Universitas Pelita Bangsa. Dengan integrasi asisten AI (LLaMA), pengguna dapat berkomunikasi lebih cerdas dan cepat — baik dengan teman kuliah maupun untuk bertanya seputar informasi kampus.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Dibuat oleh Tim RillChat · © 2025 RillChat
+  </footer>
+
+  <!-- Tombol Dark Mode -->
+  <button id="darkToggle"><i class="uil uil-moon"></i></button>
+
+  <!-- Script Toggle -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const darkToggle = document.getElementById('darkToggle');
+
+    menuBtn.onclick = () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    };
+    closeBtn.onclick = () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+    overlay.onclick = () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    };
+
+    // Dark Mode Toggle
+    darkToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      const icon = darkToggle.querySelector('i');
+      icon.classList.toggle('uil-moon');
+      icon.classList.toggle('uil-sun');
+    };
+  </script>
+</body>
+</html>
